@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Web - Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f3f5f8;
+        }
+
+        .container {
+            width: 950px;
+            max-width: 100%;
+            min-height: 550px;
+            display: grid;
+            grid-template-columns: 42% 58%;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+        }
+
+        /* LADO ESQUERDO */
+        .esquerdo {
+            padding: 55px;
+            background: linear-gradient(145deg, #e8edf2, #dce3e9);
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #35a9e8;
+        }
+
+        .esquerdo h1 {
+            margin-top: 60px;
+            font-size: 42px;
+        }
+
+        .esquerdo > p {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .informacao {
+            margin-top: 35px;
+            padding: 18px;
+            border-left: 4px solid #42b8f2;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .informacao strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .informacao p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* LADO DIREITO */
+        .direito {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 55px;
+        }
+
+        .formulario {
+            width: 100%;
+            max-width: 430px;
+        }
+
+        .formulario h2 {
+            color: #32a6df;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            color: #4b9fca;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .campo input {
+            width: 100%;
+            height: 48px;
+            padding: 0 14px;
+            border: 2px solid #e3e7eb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .campo input:focus {
+            border-color: #35a9e8;
+        }
+
+        .opcoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+            font-size: 12px;
+        }
+
+        .lembrar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #68727c;
+        }
+
+        .opcoes a,
+        .cadastro a {
+            color: #187aca;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botao {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 7px;
+            background: linear-gradient(90deg, #2478d0, #1262bd);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            opacity: 0.9;
+        }
+
+        .cadastro {
+            text-align: center;
+            margin-top: 20px;
+            color: #68a8ca;
+            font-size: 12px;
+        }
+
+        /* CELULAR */
+        @media (max-width: 700px) {
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .esquerdo {
+                padding: 35px 25px;
+                min-height: 320px;
+            }
+
+            .esquerdo h1 {
+                margin-top: 50px;
+                font-size: 35px;
+            }
+
+            .direito {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LADO ESQUERDO -->
+        <div class="esquerdo">
+
+            <div class="logo">
+                SISTEMA<span>WEB</span>
+            </div>
+
+            <h1>Bem-vindo!</h1>
+
+            <p>
+                Acesse sua conta para continuar utilizando
+                o sistema de forma rápida, segura e organizada.
+            </p>
+
+            <div class="informacao">
+                <strong>Gestão simples e eficiente</strong>
+
+                <p>
+                    Tenha acesso às suas informações de forma
+                    rápida, segura e organizada.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- LADO DIREITO -->
+        <div class="direito">
+
+            <div class="formulario">
+
+                <h2>Entrar na sua conta</h2>
+
+                <p class="subtitulo">
+                    Informe seus dados para acessar o sistema.
+                </p>
+
+                <form id="formLogin">
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="opcoes">
+
+                        <label class="lembrar">
+                            <input type="checkbox">
+                            Lembrar de mim
+                        </label>
+
+                        <a href="#">
+                            Esqueci minha senha
+                        </a>
+
+                    </div>
+
+
+                    <button type="submit" class="botao">
+                        Entrar
+                    </button>
+
+
+                    <p class="cadastro">
+                        Ainda não possui uma conta?
+                        <a href="#">Criar conta</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("formLogin").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            if (this.checkValidity()) {
+
+                alert("Login realizado com sucesso!");
+
+            } else {
+
+                this.reportValidity();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
